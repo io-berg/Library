@@ -1,3 +1,19 @@
+body{
+    background-color: #e1f2f7;
+    color:black;
+}
+
+
+
+.exclude {
+    background: yellow;
+    height: 100px;
+}
+
+.gray {
+    background: purple;
+    height: 100px;
+}
 
 #header {
     display: flex;
@@ -13,15 +29,56 @@
 #title {
     margin-top: 5vh;
     margin-right: 3vh;
-    font-size: 1.5em;
+    font-size:50px;
     font-weight: bold;
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#ef0d50
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #ef0d50;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 #Btn-CreateBook {
-    margin-top: 3vh;
-    margin-left: 3vh;
+    height:40px;
+    width: 150px;
+    float:right;
+    margin-top: 15px;
+    font-size: 1.5em;
 }
 
 #BookCardsContainer {
@@ -29,13 +86,98 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 1vh;
-    background-color: cadetblue;
 }
 
 .card {
-    background-color: cornsilk;
+    background-color: #ffffff;
     margin: 5px;
     width: 200px;
     text-align: center;
-    font-family:sans-serif
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    overflow-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border:solid;
+    border-radius: 9px;
+    border-width: 2px;
+    border-color: #ffffff;
+}
+
+.card-title {
+    font-weight: 800;
+}
+
+.card-author {
+    margin: auto;
+}
+
+.card-pages {
+    font-weight: bold;
+}
+
+.card-buttons {
+    justify-self: end;
+}
+
+.read-button {
+    font-size: 1.2em;
+    color:black;
+}
+
+.delete-button {
+    font-size: 1.2em;
+    color:white;
+}
+
+#dimmer {
+    display:none;
+    position: fixed;
+    z-index: 300;
+    background-color: rgba(1, 1, 1, 0.7);
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+#popupFormCreateBook {
+    z-index: 301;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    display:none;
+    width: fit-content;
+    position: absolute;
+    background-color: rgb(252, 206, 242);
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+    padding: 2em;
+    border-radius: 1em;
+}
+
+#formheader {
+    text-align: center;
+}
+
+.input-div {
+    margin:5px;
+    text-align: center;
+}
+
+#creatBookForm {
+    display:flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;   
+}
+
+#submitCreatBookBtn {
+    width: 5em;
+    height: 2em;
+    margin: auto;
+    margin-top:1em;
+    font-size: 1em;
 }

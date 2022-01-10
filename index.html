@@ -8,12 +8,36 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet"> 
     </head>
     <body>
+        <div id="dimmer"></div>
         <div id="header">
             <div id="titleButton">
                 <h1 id="title">JS Library</h1>
-                <button id="Btn-CreateBook">Add Book</button>
+                <button class="button" id="Btn-CreateBook"><span>Add Book</span></button>
+            </div>
+        </div>
+        <div id="popupFormCreateBook">
+            <div id="formContainer">
+                <h2 id="formheader">Book details</h2>
+                <form id="creatBookForm" action="javascript:createBook()">
+                    <div class="input-div">
+                        <label for="titleInput">Title:</label> <br>
+                        <input type="text" id="titleInput" value="Title"> <br>    
+                    </div>
+                    <div class="input-div">
+                        <label for="authorInput">Author:</label><br>
+                        <input type="text" id="authorInput" value="Author"> <br>
+                    </div>
+                    <div class="input-div">
+                        <label for="pagesInput">Pages:</label><br>
+                        <input type="number" id="pagesInput" value=0> <br>
+                    </div>
+                    <input type="submit" class="button" id="submitCreatBookBtn" value="Submit">
+                </form>
             </div>
         </div>
         <div id="BookCardsContainer">
