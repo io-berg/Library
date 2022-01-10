@@ -1,0 +1,41 @@
+
+#header {
+    display: flex;
+    flex-direction: column;
+}
+
+#titleButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#title {
+    margin-top: 5vh;
+    margin-right: 3vh;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#Btn-CreateBook {
+    margin-top: 3vh;
+    margin-left: 3vh;
+}
+
+#BookCardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1vh;
+    background-color: cadetblue;
+}
+
+.card {
+    background-color: cornsilk;
+    margin: 5px;
+    width: 200px;
+    text-align: center;
+    font-family:sans-serif
+}
