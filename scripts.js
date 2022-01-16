@@ -1,11 +1,21 @@
 let myLibrary = [];
 
-function Book(title, author, pages) {
-    this.title = '"' + title + '"';
-    this.author = author;
-    this.pages = pages;
-    this.id = '"' + title + '"' + author + "Pages: " + pages;
-    this.isRead = false;
+// function Book(title, author, pages) {
+//     this.title = '"' + title + '"';
+//     this.author = author;
+//     this.pages = pages;
+//     this.id = '"' + title + '"' + author + "Pages: " + pages;
+//     this.isRead = false;
+// }
+
+class Book {
+    constructor(title, author, pages) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.id = title + author + "Pages: " + pages;
+        this.isRead = false;
+    }
 }
 
 function addBookToLibrary(book) {
@@ -84,13 +94,13 @@ function toggleRead(e) {
     if (e.target.innerText == 'read') {
         e.target.innerText = 'unread';
         e.target.style.backgroundColor = 'yellow';
-        let index = myLibrary.findIndex(book => book.id === id);
+        let index = myLibrary.findIndex(e => e.id == id);
         myLibrary[index].isRead = true;
     }
     else {
         e.target.innerText = 'read';
         e.target.style.backgroundColor = 'lightgreen';
-        let index = myLibrary.findIndex(book => book.id === id);
+        let index = myLibrary.findIndex(e => e.id === id);
         
         myLibrary[index].isRead = false;
     }
@@ -100,7 +110,7 @@ function deleteCard(e) {
     const cardContainer = document.querySelector('#BookCardsContainer');
     let id = e.target.parentNode.parentNode.children[0].innerText + e.target.parentNode.parentNode.children[1].innerText + e.target.parentNode.parentNode.children[2].innerText;
     
-    let index = myLibrary.findIndex(book => book.id === id);
+    let index = myLibrary.findIndex(e => e.id === id);
 
     myLibrary.splice(index, 1);
     cardContainer.removeChild(e.target.parentNode.parentNode);
